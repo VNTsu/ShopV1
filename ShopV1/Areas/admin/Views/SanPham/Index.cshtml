@@ -1,0 +1,25 @@
+﻿@model IList<ShopV1.Models.SanPham>
+@{
+    ViewData["Title"] = "Index";
+}
+@Html.ActionLink("Create", "Create")
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.MaSanphan
+            </td>
+            <td>
+                @item.TenSanpham
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Update", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

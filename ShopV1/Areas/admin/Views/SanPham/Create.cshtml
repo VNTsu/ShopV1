@@ -1,0 +1,66 @@
+﻿
+@model ShopV1.Models.SanPham
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@using (Html.BeginForm("Create", "SanPham"))
+{
+    <div>Mã sản phẩm : @Html.TextBoxFor(m => m.MaSanphan)</div>
+    <div>Tên sản phẩm: @Html.TextBoxFor(m => m.TenSanpham)</div>
+    <div>Ảnh sp: @Html.TextBoxFor(m => m.AnhSanpham)</div>
+    <div>
+        Màu: @Html.DropDownList("Mau", new List<SelectListItem> {
+new SelectListItem
+{
+Text = "Xanh" ,Value = "1" , Selected = true
+},
+new SelectListItem
+{
+Text = "Đỏ" ,Value = "2"
+},
+new SelectListItem
+{
+Text = "TÍm" ,Value = "3"
+},
+new SelectListItem
+{
+Text = "Vàng" ,Value = "4" , Selected = true
+}
+}, "Chọn Màu")
+    </div>
+    <div>
+        Size: @Html.DropDownList("Size", new List<SelectListItem> {
+new SelectListItem
+{
+Text = "L" ,Value = "L" , Selected = true
+},
+new SelectListItem
+{
+Text = "M" ,Value = "M"
+},
+new SelectListItem
+{
+Text = "S" ,Value = "S"
+},
+new SelectListItem
+{
+Text = "XL" ,Value = "XL"
+}
+}, "Chọn Size")
+    </div>
+    <div>
+    </div>
+    <div>Loại sản phẩm</div>
+    @Html.DropDownList("IdDanhmuc", (IEnumerable<SelectListItem>)ViewBag.ID, new { @class = "form-control" })
+    <div>Mô Tả: @Html.TextBoxFor(m => m.Mota)</div>
+    <div>Giá  : @Html.TextBoxFor(m => m.GiaSanpham)</div>
+    <div>Giá KM: @Html.TextBoxFor(m => m.GiaKm)</div>
+    <div>Số Lượng: @Html.TextBoxFor(m => m.SoLuong)</div>
+    <div>
+        <input type="submit" value="Add Product" />
+    </div>
+}
+

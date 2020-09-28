@@ -1,0 +1,63 @@
+﻿@using ShopV1.Models;
+@model ShopV1.Models.SanPham
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@using (Html.BeginForm("Update", "SanPham"))
+{
+    <div>Mã sản phẩm : @Html.TextBoxFor(m => m.MaSanphan)</div>
+    <div>Tên sản phẩm: @Html.TextBoxFor(m => m.TenSanpham)</div>
+    <div>Ảnh sp: @Html.TextBoxFor(m => m.AnhSanpham)</div>
+    <div>
+        Màu: @Html.DropDownList("Mau", new List<SelectListItem> {
+new SelectListItem
+{
+Text = "Xanh" ,Value = "1" , Selected = true
+},
+new SelectListItem
+{
+Text = "Đỏ" ,Value = "2"
+},
+new SelectListItem
+{
+Text = "TÍm" ,Value = "3"
+},
+new SelectListItem
+{
+Text = "Vàng" ,Value = "4" , Selected = true
+}
+}, "Chọn Màu")
+    </div>
+    <div>
+        Size: @Html.DropDownList("Size", new List<SelectListItem> {
+new SelectListItem
+{
+Text = "L" ,Value = "1" , Selected = true
+},
+new SelectListItem
+{
+Text = "M" ,Value = "2"
+},
+new SelectListItem
+{
+Text = "S" ,Value = "3"
+},
+new SelectListItem
+{
+Text = "XL" ,Value = "4" , Selected = true
+}
+}, "Chọn Size")
+    </div>
+    <div>Mô Tả: @Html.TextBoxFor(m => m.Mota)</div>
+    <div>Giá  : @Html.TextBoxFor(m => m.GiaSanpham)</div>
+    <div>Giá KM: @Html.TextBoxFor(m => m.GiaKm)</div>
+    <div>id danh muck: @Html.TextBoxFor(m => m.IdDanhmuc)</div>
+    <div>Số Lượng: @Html.TextBoxFor(m => m.SoLuong)</div>
+    <div>
+        <input type="submit" value="Add Product" />
+    </div>
+}
+

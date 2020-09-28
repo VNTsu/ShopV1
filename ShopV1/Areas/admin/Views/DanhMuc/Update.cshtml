@@ -1,0 +1,16 @@
+﻿@model ShopV1.Models.DanhMuc
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+@using (Html.BeginForm("Update", "DanhMuc"))
+{
+    <div>Id @Html.TextBoxFor(m => m.IdParent)</div>
+    <div>Name @Html.TextBoxFor(m => m.Ten)</div>
+    <div><input type="submit" value="Update" /></div>
+}
+
+
+

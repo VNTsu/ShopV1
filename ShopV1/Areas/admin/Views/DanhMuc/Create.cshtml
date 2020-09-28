@@ -1,0 +1,14 @@
+﻿
+@model ShopV1.viewModel.DanhMucViewModel
+@{
+    ViewData["Title"] = "Insert";
+    var item = new ShopV1.viewModel.DanhMucViewModel();
+}
+
+<h1>Insert</h1>
+@using (Html.BeginForm("Create", "DanhMuc"))
+{   
+    <div>Id @Html.TextBoxFor(m => m.IdParent)</div>
+    <div>Name @Html.TextBoxFor(m => m.Ten)</div>
+    <div><input type="submit" value="Add catalog" /></div>
+}
